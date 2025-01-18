@@ -7,6 +7,7 @@ const app = express();
 
 // Importing the routes
 const userRoutes = require("./routes/userRoutes");
+const loginRoute = require("./routes/loginRoute")
 
 // Connecting the database
 async function main() {
@@ -31,6 +32,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api", userRoutes);
+app.use("/api", loginRoute);
 
 // 404 Route Not Found Middleware
 app.use((req, res, next) => {
